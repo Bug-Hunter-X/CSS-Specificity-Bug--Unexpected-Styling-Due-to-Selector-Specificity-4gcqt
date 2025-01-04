@@ -1,0 +1,18 @@
+The following CSS code snippet demonstrates a common issue where the specificity of selectors leads to unexpected behavior.  The rule with the more specific selector (`.container .item`) overrides the rule with the less specific selector (`.item`).  This can happen when you're not carefully considering the order of your CSS rules and selector specificity.
+
+```css
+.item {
+  color: blue;
+}
+
+.container .item {
+  color: red;
+}
+
+.container {
+  width: 200px;
+  border: 1px solid black;
+}
+```
+
+This results in all items within a container being red instead of blue.  However, items outside a container will correctly be blue.
